@@ -2797,7 +2797,7 @@ icmp6_redirect_input(struct mbuf *m, int off, int icmp6len)
 	}
 
 	if (ndopts.nd_opts_rh) {
-		redirhdrlen = ndopts.nd_opts_rh->nd_opt_rh_len;
+		redirhdrlen = ndopts.nd_opts_rh->nd_opt_rh_len << 3;
 		redirhdr = (u_char *)(ndopts.nd_opts_rh + 1); /* xxx */
 	}
 
